@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: 'Sacramento', cursive;
+            /* position: relative; */
+        }
+        .message_container{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /* z-index: -1; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         .button{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 120px;
+            width: auto;
+            animation: rotate 1s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease;
+        }
+        .button.active{
+            visibility: hidden;
+            opacity: 0;
+        }
+        .button span{
+            position: absolute;
+    /* z-index: 99; */
+    top: -30px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+        }
+        @keyframes rotate {
+            0%{
+                transform: translate(-50%,-50%) rotate(-30deg);
+            }
+            50%{
+                transform:translate(-50%,-50%) rotate(30deg);
+            }
+            100%{
+                transform:translate(-50%,-50%) rotate(-30deg);
+            }
+        }
+        .intro{
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            padding: 0 15px;
+            z-index: -1;
+        }
+        .intro.active{
+            visibility: visible;
+            opacity: 1;
+        }
+         .intro h1{
+            color: #000;
+            max-width: 400px;
+            width: 100%;
+            /* text-align: justify; */
+            /* background: pink; */
+            font-weight: 500;
+            font-size: 50px;
+            font-family: 'Sacramento', cursive;
+            animation: show 1s ease-in-out;
+        }
+        @keyframes show {
+            0%{
+                margin-left: 80px;
+                visibility: hidden;
+                opacity: 0;
+            }
+            100%{
+                visibility: visible;
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+        @media screen and (min-width: 594px){
+            .message_container{
+                z-index: -1;
+        }
+        .intro{
+            width: unset;
+        }
+    }
+    </style>
+    <!-- <div id="container">
+    </div> -->
+    <audio src="./img/tomp3.cc - Taylor Swift ft Lana del Rey  Snow On The Beach Official Lyric Video.mp3" id="audio" loop></audio>
+    <div class="snow"></div>
+    <div class="message_container">
+        
+        <div class="intro">
+            <h1 class="slide">Hi Aira</h1>
+            <h1 class="slide">Everyday I'm thankful to have you</h1>
+            <h1 class="slide">You make me smile</h1>
+            <h1 class="slide">You brighten my day</h1>
+            <h1 class="slide">You give me butterflies</h1>
+            <h1 class="slide">I can’t tell you enough how special you are to me.</h1>
+            <h1 class="slide">I want to give you hugs and kisses all day.</h1>
+            <h1 class="slide">Whenever I feel like giving up, your love keeps me going.</h1>
+            <h1 class="slide">You’re my shining star, you always give me light through the darkness days</h1>
+            <h1 class="slide">You’re my best mage</h1>
+            <h1 class="slide">Happy Valentines</h1>
+            <h1 class="slide">Thankyou and I love you bebi</h1>
+        </div>
+    </div>
+    
+    <div class="button">
+        <img src="./img/7467420.png" alt="" class="button">
+        <span>click me</span>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
